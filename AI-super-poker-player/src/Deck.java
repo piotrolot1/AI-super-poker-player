@@ -7,10 +7,6 @@ public class Deck {
 	private static ArrayList<Card> listOfCard;
 	private static Deck deck = null;
 	
-	private Deck() { Deck.deck = this; createDeck();
-		showDeck();		// Comment out it after the testing 
-	};
-	
 	public static Deck getDeck() { return Deck.deck == null ? new Deck() : Deck.deck;}
 	private void createDeck() {
 		Deck.listOfCard = new ArrayList<>();
@@ -26,4 +22,7 @@ public class Deck {
 		for(Card card: Deck.listOfCard)
 			System.out.println(card);
 	}
+	
+	private Deck() { Deck.deck = this; createDeck(); showDeck();};		// Comment out showDeck() after the testing 
+	
 }
