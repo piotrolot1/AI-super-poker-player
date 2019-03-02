@@ -1,5 +1,7 @@
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Deck {
 
@@ -40,8 +42,14 @@ public class Deck {
 		Deck.listOfCard.add(firstPosition, auxiliaryCard2);
 		Deck.listOfCard.remove(secondPosition);
 		Deck.listOfCard.add(secondPosition, auxiliaryCard1);
+	} 
+	public List<Card> getCards(int numberOfCards) {
+		List<Card> result = new ArrayList<>(); 
+		while(numberOfCards-- > 0) {
+			result.add(Deck.listOfCard.remove(0));
+		}
+		return result; 
 	}
-	
 	
 	private Deck() { Deck.deck = this; createDeck(); };		// Comment out showDeck() after the testing 
 	
