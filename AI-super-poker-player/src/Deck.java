@@ -50,7 +50,12 @@ public class Deck {
 		}
 		return result; 
 	}
+	public void putCards(List<Card> restOfCards) {
+		int i = restOfCards.size();
+		while(i-- > 0)
+			Deck.listOfCard.add(restOfCards.remove(0));
+	}
 	
-	private Deck() { Deck.deck = this; createDeck(); };		// Comment out showDeck() after the testing 
+	private Deck() { Deck.deck = this; createDeck(); }; 
 	
 }
